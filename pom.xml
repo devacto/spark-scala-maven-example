@@ -36,19 +36,19 @@
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
             <version>${scala.version}</version>
-            <scope>provided</scope>
+            <!-- <scope>provided</scope> -->
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_${scala.compat.version}</artifactId>
             <version>${spark.version}</version>
-            <scope>provided</scope>
+            <!-- <scope>provided</scope> -->
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-sql_${scala.compat.version}</artifactId>
             <version>${spark.version}</version>
-            <scope>provided</scope>
+            <!-- <scope>provided</scope> -->
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -216,18 +216,18 @@
                     <transformers>
                         <transformer
                                 implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                            <mainClass>net.martinprobson.spark.SparkTest</mainClass>
+                            <mainClass>net.martinprobson.spark.SparkMain</mainClass>
                         </transformer>
                     </transformers>
                     <artifactSet>
                         <excludes>
-                            <exclude>javax.servlet:*</exclude>
-                            <exclude>org.apache.hadoop:*</exclude>
+                            <!-- <exclude>javax.servlet:*</exclude> -->
+                            <!-- <exclude>org.apache.hadoop:*</exclude> -->
                             <exclude>org.apache.maven.plugins:*</exclude>
-                            <exclude>org.apache.spark:*</exclude>
+                            <!-- <exclude>org.apache.spark:*</exclude> -->
                             <exclude>org.apache.avro:*</exclude>
                             <exclude>org.apache.parquet:*</exclude>
-                            <exclude>org.scala-lang:*</exclude>
+                            <!-- <exclude>org.scala-lang:*</exclude> -->
                         </excludes>
                     </artifactSet>
                 </configuration>

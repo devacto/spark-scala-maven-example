@@ -27,6 +27,13 @@ trait SparkEnv {
     versionInfo.split("\n")
   }
 
+  /*
+	* Dump spark configuration for the current spark session.
+	*/
+  private[spark] def getAllConf: String = {
+    getSession.conf.getAll.map { case(k,v) => "Key: [%s] Value: [%s]" format (k,v)} mkString("","\n","\n")
+  }
+
   /**
     * Return spark session object
     *
@@ -35,15 +42,9 @@ trait SparkEnv {
     */
   private def getSession: SparkSession = {
     val sparkSession = SparkSession.builder
-      .appName(conf.getString("spark_example.app_name"))
-      .getOrCreate()
+        .master(conf.getString("spark_example.spark_master"))
+        .appName(conf.getString("spark_example.app_name"))
+        .getOrCreate()
     sparkSession
-  }
-
-  /*
-	* Dump spark configuration for the current spark session.
-	*/
-  private[spark] def getAllConf: String = {
-    getSession.conf.getAll.map { case(k,v) => "Key: [%s] Value: [%s]" format (k,v)} mkString("","\n","\n")
   }
 }
