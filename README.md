@@ -4,7 +4,7 @@ This archive contains an example Maven project for Scala Spark 2 application.
 
 # Running
 
-To run this, follow the steps below:
+To run this, follow the steps below (in order):
 - `rm -r target`
 - `mvn clean package`
 - `java -jar target/spark_example-1.0-SNAPSHOT.jar`
