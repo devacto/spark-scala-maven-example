@@ -1,10 +1,29 @@
-
-Example Maven Project for Scala Spark 2 Application
-===================================================
-
 # Introduction
 
 This archive contains an example Maven project for Scala Spark 2 application.
+
+# Running
+
+To run this, follow the steps below:
+- `rm -r target`
+- `mvn clean package`
+- `java -jar target/spark_example-1.0-SNAPSHOT.jar`
+
+You should see the below when running this:
+
+```
+---------------------------------------------------------------------------------
+ Scala version: 2.11.8
+ Spark version: 2.1.1
+ Spark master : local
+ Spark running locally? true
+ Default parallelism: 1
+---------------------------------------------------------------------------------
+```
+
+# Assumption
+
+Spark needs to be installed locally. If you are on MacOS, install spark using the command `brew install apache-spark`.
 
 # Details
 
